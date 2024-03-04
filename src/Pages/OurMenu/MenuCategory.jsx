@@ -7,7 +7,7 @@ const MenuCategory = ({ item, title }) => {
             <div className="grid md:grid-cols-2 gap-4 my-10 px-2 items-start justify-start">
                 {
                     item.map(item =>
-                        <div key={item._id} className="flex justify-center space-x-3">
+                        <div key={item._id} className="flex items-start space-x-3">
                             <img className="w-[80px] h-[80px] rounded-tl-0 rounded-tr-full rounded-bl-full rounded-br-full " src={item.image} alt="" />
                             <div>
                                 <h2 className="text-xl">{item.name}---------------</h2>

@@ -5,6 +5,7 @@ import Dashboard from "../Layout/Dashboard";
 import Main from "../Layout/Main";
 import AddItem from "../Pages/Dashboard/AddItem";
 import AllUsers from "../Pages/Dashboard/AllUsers";
+import ManageItem from "../Pages/Dashboard/ManageItem";
 import MyCart from "../Pages/Dashboard/MyCart";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -56,6 +57,10 @@ import PrivateRouter from './PrivateRouter/PrivateRouter';
         {
           path:'/dashboard/additem',
           element:<AdminRoute><AddItem></AddItem></AdminRoute>
+        },
+        {
+          path:'/dashboard/manageitem',
+          element:<AdminRoute><ManageItem></ManageItem></AdminRoute>
         }
       ]
     }

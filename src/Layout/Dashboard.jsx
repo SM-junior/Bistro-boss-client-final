@@ -32,7 +32,7 @@ const Dashboard = () => {
                         isAdmin ? <>
                             <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='/' className='flex items-center'><span className='px-2'><FaHome></FaHome> </span>Admin Home</NavLink></li>
                             <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='/dashboard/additem' className='flex items-center'><span className='px-2'><ImSpoonKnife></ImSpoonKnife> </span> Add items</NavLink></li>
-                            <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='payment' className='flex items-center'><span className='px-2'><AiOutlineBars></AiOutlineBars> </span> Manage Items</NavLink></li>
+                            <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='/dashboard/manageitem' className='flex items-center'><span className='px-2'><AiOutlineBars></AiOutlineBars> </span> Manage Items</NavLink></li>
                             <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='review' className='flex items-center'><span className='px-2'><FaBook></FaBook> </span> Manage Bookings</NavLink></li>
                             <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='allUsers' className='flex items-center'><span className='px-2'><FaUsers></FaUsers> </span> All Users</NavLink></li>
                         </>
