@@ -18,7 +18,7 @@ const Dashboard = () => {
         <li><a>Navbar Item 2</a></li>
     </>
     return (
-        <div className="flex flex-col sm:flex-row w-full mx-auto min-h-screen bg-slate-100">
+        <div className="flex flex-col sm:flex-row w-full mx-auto min-h-screen">
             <Helmet>
                 <title>Bistro Boss || Dashboard</title>
             </Helmet>
@@ -31,7 +31,7 @@ const Dashboard = () => {
                     {
                         isAdmin ? <>
                             <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='/' className='flex items-center'><span className='px-2'><FaHome></FaHome> </span>Admin Home</NavLink></li>
-                            <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='reservation' className='flex items-center'><span className='px-2'><ImSpoonKnife></ImSpoonKnife> </span> Add items</NavLink></li>
+                            <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='/dashboard/additem' className='flex items-center'><span className='px-2'><ImSpoonKnife></ImSpoonKnife> </span> Add items</NavLink></li>
                             <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='payment' className='flex items-center'><span className='px-2'><AiOutlineBars></AiOutlineBars> </span> Manage Items</NavLink></li>
                             <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='review' className='flex items-center'><span className='px-2'><FaBook></FaBook> </span> Manage Bookings</NavLink></li>
                             <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='allUsers' className='flex items-center'><span className='px-2'><FaUsers></FaUsers> </span> All Users</NavLink></li>
@@ -52,7 +52,7 @@ const Dashboard = () => {
                     <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='/contact' className='flex items-center'><span className='px-2'><MdEmail></MdEmail> </span> Contact</NavLink></li>
                 </ul>
             </div>
-            <div className='mx-auto basis-3/4 bg-fixed'>
+            <div className='mx-auto basis-3/4 bg-fixed bg-white'>
                 <Outlet></Outlet>
             </div>
         </div>
