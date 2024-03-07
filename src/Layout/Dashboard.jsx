@@ -39,7 +39,7 @@ const Dashboard = () => {
                             : <>
                                 <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='/' className='flex items-center'><span className='px-2'><FaHome></FaHome> </span> Home</NavLink></li>
                                 <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='reservation' className='flex items-center'><span className='px-2'><FaCalendarAlt></FaCalendarAlt> </span> Reservation</NavLink></li>
-                                <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='payment' className='flex items-center'><span className='px-2'><FaWallet></FaWallet> </span> Payment History</NavLink></li>
+                                <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='/dashboard/payment' className='flex items-center'><span className='px-2'><FaWallet></FaWallet> </span> Payment History</NavLink></li>
                                 <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='mycart' className='flex items-center'><span className='px-2'><FaShoppingCart></FaShoppingCart> </span> MyCart<sup><span className="text-[14px] text-white rounded-full px-1"> {cart.length}</span></sup></NavLink></li>
                                 <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='review' className='flex items-center'><span className='px-2'><FaRankingStar></FaRankingStar> </span> Add Review</NavLink></li>
                                 <li className='py-2 hover:bg-slate-500 hover:text-white'><NavLink to='booking' className='flex items-center'><span className='px-2'><FaClipboardCheck></FaClipboardCheck> </span> My Booking</NavLink></li>
