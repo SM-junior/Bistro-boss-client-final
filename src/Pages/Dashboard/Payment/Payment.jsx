@@ -1,23 +1,30 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Elements } from '@stripe/react-stripe-js';
-import CheckOutForm from './CheckOutForm';
-import {loadStripe} from '@stripe/stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import React from 'react';
+import SectionTitle from '../../../Components/SectionTitle';
+import CheckoutForm from './CheckoutForm';
+import useCart from '../../../hooks/useCart';
 
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 
-const stripePromise=loadStripe('import.meta.env.PK')
 const Payment = () => {
+    const [cart] = useCart();
+    //calculate total cart items price
+    const total = cart.reduce((acc, item) => { return acc + item.price }, 0);
+    //convert price into 2 decimal( point. ar por only 2ta digit thakbe )
+    const price = parseFloat(total.toFixed(2))
+
+
     return (
         <div>
-            <Helmet><title>Bistro Boss || payment</title></Helmet>
-            <div className='text-center py-10'>
-                <h2 className='text-2xl font-semibold'>Payment</h2>
+            <SectionTitle subTitle='Please Process' title='payment'></SectionTitle>
+            <div className='w-1/2 mx-auto'>
                 <Elements stripe={stripePromise}>
-                    <CheckOutForm></CheckOutForm>
+                    <CheckoutForm price={price} />
                 </Elements>
             </div>
         </div>
     );
 };
 
-export default Payment;
+export default Payment; 
