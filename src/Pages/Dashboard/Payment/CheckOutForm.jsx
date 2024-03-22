@@ -13,6 +13,7 @@ const CheckoutForm = ({ cart, price }) => {
     const { user } = useContext(authContext);
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
+    console.log(cart);
 
     useEffect(() => {
         if (price > 0) {
@@ -23,6 +24,15 @@ const CheckoutForm = ({ cart, price }) => {
                 })
         }
     }, [price, axiosSecure])
+
+    // useEffect(() => {
+
+    //         axiosSecure.post('/create-payment-intent', { price })
+    //             .then(res => {
+    //                 // console.log(res.data.clientSecret);
+    //                 setClientSecret(res.data.clientSecret)
+    //             })
+    // }, [])
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -85,6 +95,7 @@ const CheckoutForm = ({ cart, price }) => {
                 data: new Date(),
                 status: "service pending",
                 quantity: cart.length,
+                // category: cart.map(item => item.category),
                 itemName: cart.map(item => item.name),
                 cartItems: cart.map(item => item._id),
                 menuItems: cart.map(item => item.menuItemId)

@@ -6,15 +6,17 @@ import useCart from '../../hooks/useCart';
 import { authContext } from '../../Provider/AuthProvider';
 
 const ShopCard = ({ singleItem }) => {
-    const { name, image, recipe, price, _id } = singleItem;
+    const { name, image, recipe, category, price, _id } = singleItem;
     const { user } = useContext(authContext);
     const Navigate = useNavigate();
     const location=useLocation();
     const [cart,refetch]=useCart()
 
+    console.log(singleItem);
+
     const handleAddToCart = (singleItem) => {
         if (user && user?.email) {
-            const cartItem = { menuItemId: _id, name, image, price, email: user?.email }
+            const cartItem = { menuItemId: _id, name, category, image, price, email: user?.email }
             fetch('http://localhost:3000/carts', {
                 method: 'POST',
                 headers: {

@@ -6,10 +6,11 @@ import { authContext } from "../Provider/AuthProvider";
 const axiosSecure = axios.create({
     baseURL: 'http://localhost:3000'
 })
+
 const useAxiosSecure = () => {
     const navigate = useNavigate();
     const { logOut } = useContext(authContext);
-
+    
     // request interceptor to add authorization header for every secure call to teh api
     axiosSecure.interceptors.request.use(function (config) {
         const token = localStorage.getItem('access-token')
@@ -35,8 +36,6 @@ const useAxiosSecure = () => {
         }
         return Promise.reject(error);
     })
-
-
     return axiosSecure;
 };
 

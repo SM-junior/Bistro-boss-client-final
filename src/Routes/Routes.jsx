@@ -4,10 +4,12 @@ import {
 import Dashboard from "../Layout/Dashboard";
 import Main from "../Layout/Main";
 import AddItem from "../Pages/Dashboard/AddItem";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import AllUsers from "../Pages/Dashboard/AllUsers";
 import ManageItem from "../Pages/Dashboard/ManageItem";
 import MyCart from "../Pages/Dashboard/MyCart";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import UserHome from "../Pages/Dashboard/UserHome/UserHome";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import Order from "../Pages/Order/Order";
@@ -53,8 +55,12 @@ export const router = createBrowserRouter([
         element: <MyCart></MyCart>
       },
       {
-        path:'/dashboard/payment',
-        element:<Payment></Payment>
+        path: '/dashboard/userhome',
+        element: <UserHome></UserHome>
+      },
+      {
+        path: '/dashboard/payment',
+        element: <Payment></Payment>
       },
       //admin related routes................................................
       {
@@ -68,6 +74,10 @@ export const router = createBrowserRouter([
       {
         path: '/dashboard/manageitem',
         element: <AdminRoute><ManageItem></ManageItem></AdminRoute>
+      },
+      {
+        path: '/dashboard/adminhome',
+        element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
       }
     ]
   }

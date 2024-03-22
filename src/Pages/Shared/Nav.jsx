@@ -7,7 +7,8 @@ import useCart from '../../hooks/useCart';
 
 const Nav = () => {
     const { user, logOut } = useContext(authContext);
-    const [cart]=useCart();
+    const [cart] = useCart();
+    // const [isAdmin]=useAdmin()
 
     const handleLogOut = () => [
         logOut()
@@ -21,12 +22,16 @@ const Nav = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/ourMenu'>Our Menu</Link></li>
         <li><Link to='/order/salad'>Our Shop</Link></li>
+        <li><Link to='/dashboard/adminhome'>Dashboard</Link></li>
+        
+        {/* <li><Link to={isAdmin ? '/dashboard/adminhome' : '/dashboard/userhome'}>Dashboard</Link></li> */}
+        
         <li className='text-xl me-2 text-[#ff3f34]'><Link to='dashboard/mycart'><FaCartPlus /><sup className='font-semibold tracking-wide'>{cart.length}</sup></Link></li>
         {
             user ?
                 <>
-                {/* <li><span>{user.displayName}</span></li> */}
-                <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
+                    {/* <li><span>{user.displayName}</span></li> */}
+                    <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
                     <li><button onClick={handleLogOut} className='btn btn-sm ms-2'><Link>LogOut</Link></button></li>
                 </>
                 :
