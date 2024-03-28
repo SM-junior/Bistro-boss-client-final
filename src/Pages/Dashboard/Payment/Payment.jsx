@@ -12,7 +12,7 @@ const Payment = () => {
     //calculate total cart items price
     const total = cart.reduce((acc, item) => { return acc + item.price }, 0);
     //convert price into 2 decimal( point. ar por only 2ta digit thakbe )
-    const price = parseFloat(total.toFixed(2))
+    const price = parseInt(total.toFixed(2))
 
 
     return (

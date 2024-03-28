@@ -12,8 +12,6 @@ const ShopCard = ({ singleItem }) => {
     const location=useLocation();
     const [cart,refetch]=useCart()
 
-    console.log(singleItem);
-
     const handleAddToCart = (singleItem) => {
         if (user && user?.email) {
             const cartItem = { menuItemId: _id, name, category, image, price, email: user?.email }
@@ -54,7 +52,7 @@ const ShopCard = ({ singleItem }) => {
     }
 
     return (
-        <div className="card w-72 h-[450px] bg-base-100 shadow-xl">
+        <div className="card w-64 h-[450px] bg-base-100 shadow-xl">
             <figure><img src={image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>

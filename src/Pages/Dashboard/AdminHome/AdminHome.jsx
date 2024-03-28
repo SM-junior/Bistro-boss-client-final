@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { authContext } from '../../../Provider/AuthProvider';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { FaFacebook, FaTwitter, FaLinkedin, FaGoogle, FaEnvelope } from 'react-icons/fa';
 
 
 const AdminHome = () => {
@@ -26,7 +27,6 @@ const AdminHome = () => {
         }
     })
 
-    console.log(chartData);
     const getPath = (x, y, width, height) => {
         return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
         ${x + width / 2}, ${y}
@@ -72,6 +72,8 @@ const AdminHome = () => {
                 </div>
 
             </div>
+
+            {/* rechart is start from here............... */}
             <div className='mt-6'>
                 <BarChart
                     width={500}

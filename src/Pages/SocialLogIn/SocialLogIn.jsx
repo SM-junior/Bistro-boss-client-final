@@ -1,10 +1,11 @@
 import React from 'react';
 import { useContext } from 'react';
 import { FaFacebookF, FaGoogle, FaGithub } from "react-icons/fa";
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { authContext } from '../../Provider/AuthProvider';
 import { useState } from 'react';
+// import { FaFacebookF } from "react-icons/fa";
 
 const SocialLogIn = () => {
     const { googleLogin } = useContext(authContext)
@@ -34,9 +35,9 @@ const SocialLogIn = () => {
     }
     return (
         <div className='flex items-center justify-center py-5'>
-            <button className='flex items-center justify-center hover:scale-110 transition duration-400 ease-in-out mx-3 rounded-full h-[30px] w-[30px] border-t-red-700 border-b-red-700 border border-black'><FaFacebookF /></button>
-            <button onClick={logInWithGoogle} className='flex items-center justify-center hover:scale-110 transition duration-400 ease-in-out mx-3 rounded-full h-[30px] w-[30px] border-t-red-700 border-b-red-700 border border-black'><FaGoogle /></button>
-            <button className='flex items-center justify-center hover:scale-110 transition duration-400 ease-in-out mx-3 rounded-full h-[30px] w-[30px] border-t-red-700 border-b-red-700 border border-black'><FaGithub /></button>
+            <Link className='rounded-full bg-blue-500 text-white p-2 m-3 hover:scale-110 transition duration-400 ease-in-out'><FaFacebookF /></Link>
+            <Link className='rounded-full bg-blue-500 text-white p-2 m-3 hover:scale-110 transition duration-400 ease-in-out' onClick={logInWithGoogle}><FaGoogle /></Link>
+            <Link className='rounded-full bg-blue-500 text-white p-2 m-3 hover:scale-110 transition duration-400 ease-in-out'><FaGithub /></Link>
         </div>
     );
 };

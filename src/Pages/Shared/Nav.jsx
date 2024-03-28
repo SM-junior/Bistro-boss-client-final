@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import '../../css/style.css'
 import { authContext } from '../../Provider/AuthProvider';
 import { FaCartPlus } from "react-icons/fa";
@@ -23,7 +23,6 @@ const Nav = () => {
         <li><Link to='/ourMenu'>Our Menu</Link></li>
         <li><Link to='/order/salad'>Our Shop</Link></li>
         <li><Link to='/dashboard/adminhome'>Dashboard</Link></li>
-        
         {/* <li><Link to={isAdmin ? '/dashboard/adminhome' : '/dashboard/userhome'}>Dashboard</Link></li> */}
         
         <li className='text-xl me-2 text-[#ff3f34]'><Link to='dashboard/mycart'><FaCartPlus /><sup className='font-semibold tracking-wide'>{cart.length}</sup></Link></li>

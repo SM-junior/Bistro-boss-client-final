@@ -68,21 +68,21 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" placeholder="name" className="input input-bordered" {...register("name", { required: true })} />
+                            <input type="text" placeholder="name" className="input input-bordered w-80" {...register("name", { required: true })} />
                             {errors.name && <span className='text-red-500'>name is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="email" className="input input-bordered" {...register("email", { required: true })} />
+                            <input type="email" placeholder="email" className="input input-bordered w-80" {...register("email", { required: true })} />
                             {errors.email && <span className='text-red-500'>email is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="password" className="input input-bordered"
+                            <input type="password" placeholder="password" className="input input-bordered w-80"
                                 {...register("password", {
                                     required: true,
                                     maxLength: 12,
@@ -98,7 +98,7 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text">Photo URL</span>
                             </label>
-                            <input type="text" placeholder="photo URL" className="input input-bordered" {...register("photoURL", { required: true })} />
+                            <input type="text" placeholder="photo URL" className="input input-bordered w-80" {...register("photoURL", { required: true })} />
                             {errors.photoURL && <span className='text-red-500'>Photo URL is required</span>}
                         </div>
                         <div className="form-control mt-6">
